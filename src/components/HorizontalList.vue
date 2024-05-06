@@ -1,12 +1,10 @@
 <template>
   <div class="horizontal-list">
-    <NumberSquare v-for="(item, index) in data" :key="index" :number="item" />
+    <NumberSquare v-for="item in data" :key="item.id" :number="item.value" />
   </div>
 </template>
 
 <script>
-
-
 import NumberSquare from "@/components/NumberSquare.vue";
 
 export default {

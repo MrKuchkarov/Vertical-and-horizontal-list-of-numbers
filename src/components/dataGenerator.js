@@ -4,13 +4,19 @@
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
+// Генерация уникального идентификатора
+export function uniqueIdGenerator() {
+    return Math.random().toString(36).substr(2, 9);
+}
 // Генерация горизонтального списка с рандомным количеством элементов (больше 10)
 function generateHorizontalList() {
     const count = getRandomInt(11, 20);
     const list = [];
     for (let i = 0; i < count; i++) {
-        list.push(getRandomInt(1, 100));
+        list.push({
+            id: uniqueIdGenerator(), // Генерация уникального ключа id для каждого элемента
+            value: getRandomInt(1, 100) // Пример значения
+        });
     }
     return list;
 }
